@@ -10,21 +10,29 @@ fun sum(a: Int, b: Int): Int{
 }
 
 fun factorial(input: Int): Long {
-    TODO()
+    return if (input <= 1) {
+        1
+    } else {
+        input.toLong() * factorial(input - 1)
+    }
 }
 
 fun product(a: Int,b: Int): Int{
-    TODO()
+
+    return a * b
 }
+
 
 fun operateOnNumbers(a: Int, b: Int, operation: (Int, Int) -> Int): Int {
-    TODO()
+    return operation(a, b)
+  TODO()
 }
 
-fun Int.square(): Int = TODO()
 
-fun multiplyWithDefaultArgument(a: Int, b: Int = 5): Int = TODO()
+fun Int.square(): Int = this * this
 
-fun multiplyWithNamedArguments(a: Int, b: Int): Int = TODO()
+fun multiplyWithDefaultArgument(a: Int, b: Int = 5): Int = a * b
 
-fun sumVarargs(vararg numbers: Int): Int = TODO()
+fun multiplyWithNamedArguments(a: Int, b: Int): Int = a * b
+
+fun sumVarargs(vararg numbers: Int): Int = numbers.sum()
